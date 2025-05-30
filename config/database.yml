@@ -83,4 +83,4 @@ production:
   <<: *default
   database: find_my_midwife_production
   username: find_my_midwife
-  password: <%= ENV["FIND_MY_MIDWIFE_DATABASE_PASSWORD"] %>
+  password: Catalina1990+
