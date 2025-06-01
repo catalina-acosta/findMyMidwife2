@@ -12,9 +12,13 @@
       <% if user_signed_in? %>
         <div id="right-header" class="image-cropper">
           <% if current_user.try(:is_midwife?) %>
-            <%= cl_image_tag current_user.midwife.photo.key, class: "avatar-small"%>
+            <% if current_user.midwife && current_user.midwife.photo.attached? %>
+              <%= cl_image_tag current_user.midwife.photo.key, class: "avatar-small" %>
+            <% end %>
           <% else %>
-            <%= cl_image_tag current_user.mom.photo.key, class: "avatar-small-blue"%>
+            <% if current_user.mom && current_user.mom.photo.attached? %>
+              <%= cl_image_tag current_user.mom.photo.key, class: "avatar-small-blue" %>
+            <% end %>
           <% end %>
         </div>
       <% end %>

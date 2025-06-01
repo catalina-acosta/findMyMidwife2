@@ -19,12 +19,16 @@ default: &default
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  # pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: 5
 
 development:
   <<: *default
   database: find_my_midwife_development
-
+  username: postgres
+  password: Catalina1990+
+  host: 127.0.0.1
+  port: 5432
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
@@ -58,6 +62,10 @@ development:
 test:
   <<: *default
   database: find_my_midwife_test
+  username: postgres
+  password: Catalina1990+
+  host: 127.0.0.1
+  port: 5432
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -83,4 +91,4 @@ production:
   <<: *default
   database: find_my_midwife_production
   username: find_my_midwife
-  password: Catalina1990+
+  password: <%= ENV["FIND_MY_MIDWIFE_DATABASE_PASSWORD"] %>
