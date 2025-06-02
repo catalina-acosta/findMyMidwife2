@@ -1,39 +1,41 @@
-<h2>Sign up</h2>
+<divv class="login-wrapper" style="box-sizing: border-box; padding: 24px; display: flex; flex-direction: column; justify-content: flex-start;">
+  <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :first_name,
-                required: true,
-                input_html: { autocomplete: "first-name" } %>
-    <%= f.input :last_name,
-                required: true,
-                input_html: { autocomplete: "last-name" } %>
-    <%= f.input :address,
-                required: true  %>
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :is_midwife,
-                :as => :select,
-                :collection => [['Midwife',true],['Mom',false]],
-                :include_blank => false,
-                :selected => false,
-                :label => "Account for:" %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input :first_name,
+                  required: true,
+                  input_html: { autocomplete: "first-name" } %>
+      <%= f.input :last_name,
+                  required: true,
+                  input_html: { autocomplete: "last-name" } %>
+      <%= f.input :address,
+                  required: true  %>
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :is_midwife,
+                  :as => :select,
+                  :collection => [['Midwife',true],['Mom',false]],
+                  :include_blank => false,
+                  :selected => false,
+                  :label => "Account for:" %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up", style: "background: #FC9D9D; color: white; border: none; padding: 10px 24px; border-radius: 6px; font-weight: bold; margin-bottom: 18px;" %>
+    </div>
+  <% end %>
 
-<%= render "devise/shared/links" %>
+  <%= render "devise/shared/links" %>
+</div>
