@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   patch 'bookings/:id/cancelled', to: 'bookings#cancelled', as: 'cancelled'
   patch 'bookings/:id/cancelled_user', to: 'bookings#cancelled_user', as: 'cancelled_user'
   patch 'bookings/:id/appointments/:id/cancelled_appointment', to: 'appointments#cancelled_appointment', as: 'cancelled_appointment'
-    # Mount Action Cable for WebSockets
+  
+  # Mount Action Cable for WebSockets
   mount ActionCable.server => '/cable'
 end
