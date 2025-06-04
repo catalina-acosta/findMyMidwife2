@@ -8,6 +8,7 @@
 #chatroom-midwife {
   background-color: #ffff;
   padding-top: 16px;
+  max-width: 680px;
 }
 
 #chatroom-mom {
@@ -91,6 +92,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-bottom: 24px;
 }
 
 .time-message-sent {
@@ -107,7 +109,7 @@
 .chatroom-form-container {
     position: absolute;
     bottom: 0;
-    width: 96vw;
+    width: 96%;
     margin: auto;
     display: flex;
     gap: 8px;

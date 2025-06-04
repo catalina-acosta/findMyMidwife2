@@ -13,7 +13,7 @@
           <%= render "messages/message", message: message %>
       <% end %>
     </div>
-      <%= simple_form_for [@booking, @message], html: { data: { action: "turbo:submit-end->booking-subscription#resetForm" }, class: "d-flex chatroom-form-container" } do |f| %>
+      <%= simple_form_for [@booking, @message], html: { data: { action: "turbo:submit-end->booking-subscription#resetForm" }, class: "chatroom-form-container" } do |f| %>
         <%= f.input :content,
           label: false,
           placeholder: "message",
@@ -22,6 +22,7 @@
         <%= f.submit "Send", class: "btn btn-accept mb-3" %>
       <% end %>
     </div>
+
 <% else %>
   <div class="header-chat" id= "mom-background">
     <%= cl_image_tag @booking.midwife.photo.key , class: "avatar-large"%>
@@ -35,7 +36,7 @@
           <%= render "messages/message", message: message %>
       <% end %>
     </div>
-      <%= simple_form_for [@booking, @message], html: { data: { action: "turbo:submit-end->booking-subscription#resetForm" }, class: "d-flex" } do |f| %>
+      <%= simple_form_for [@booking, @message], html: { data: { action: "turbo:submit-end->booking-subscription#resetForm" }, class: "chatroom-form-container" } do |f| %>
         <%= f.input :content,
           label: false,
           placeholder: "Message #",
